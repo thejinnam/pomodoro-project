@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   CircularProgressbarWithChildren,
   buildStyles,
@@ -22,9 +22,9 @@ const TimerDisplay = ({
   };
 
   return (
-    <div className={`max-w-l mx-auto p-10`}>
+    <div className={`max-w-l mx-auto p-4`}>
       <div
-        className="flex flex-col items-center justify-center bg-gray-900 rounded-full shadow-lg p-8"
+        className="flex flex-col items-center justify-center bg-gray-900 rounded-full shadow-lg p-6"
         style={{ fontFamily: themeSettings.font }}
       >
         <CircularProgressbarWithChildren

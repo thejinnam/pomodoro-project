@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react';
-import SettingsModal from './components/SettingsModal';
-import TimerDisplay from './components/TimerDisplay';
-import ModeHeader from './components/ModeHeader';
+import React, { useState, useEffect } from 'react';
+import SettingsModal from './components/SettingsModal/SettingsModal';
+import TimerDisplay from './components/TimerDisplay/TimerDisplay';
+import ModeHeader from './components/ModeHeader/ModeHeader';
 import './App.css';
 
 function App() {
   const [timerSettings, setTimerSettings] = useState({
-    mode: 'pomo', // options: 'pomo', 'short', 'long'
+    mode: 'pomo', 
     lengths: {
-      pomo: 0.1 * 60, // lengths in seconds, customizable by the user
-      short: 0.1 * 60,
-      long: 0.1 * 60,
+      pomo: 25 * 60,
+      short: 5 * 60,
+      long: 15 * 60,
     },
   });
   const [themeSettings, setThemeSettings] = useState({

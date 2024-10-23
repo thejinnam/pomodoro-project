@@ -1,3 +1,5 @@
+import React from 'react';
+
 const ModeHeader = ({ timerSettings, handleModeChange, themeSettings }) => {
   return (
     <>
