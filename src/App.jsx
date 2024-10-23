@@ -82,29 +82,41 @@ function App() {
   };
 
   return (
-    <>
-      <h1>Pomodoro</h1>
-      <ModeHeader
-        timerSettings={timerSettings}
-        handleModeChange={handleModeChange}
-        themeSettings={themeSettings}
-      />
-      <TimerDisplay
-        timeLeft={formatTimeLeft(secondsLeft)}
-        percentage={calcPercentage()}
-        isActive={isActive}
-        setIsActive={setIsActive}
-        buttonText={buttonText}
-        setButtonText={setButtonText}
-        themeSettings={themeSettings}
-      />
-      <SettingsModal
-        timerSettings={timerSettings}
-        setTimerSettings={setTimerSettings}
-        themeSettings={themeSettings}
-        setThemeSettings={setThemeSettings}
-      />
-    </>
+    <div
+      className="min-h-screen bg-[#1E213F] flex flex-col items-center py-8 px-6"
+      style={{ fontFamily: themeSettings.font }}
+    >
+      <h1 className="text-[#D7E0FF] text-3xl font-bold mb-12">Pomodoro</h1>
+
+      <div className="w-full max-w-xl flex flex-col items-center gap-12">
+        <ModeHeader
+          timerSettings={timerSettings}
+          handleModeChange={handleModeChange}
+          themeSettings={themeSettings}
+        />
+
+        <div className="w-full rounded-3xl p-4 md:p-8 flex flex-col items-center">
+          <TimerDisplay
+            timeLeft={formatTimeLeft(secondsLeft)}
+            percentage={calcPercentage()}
+            isActive={isActive}
+            setIsActive={setIsActive}
+            buttonText={buttonText}
+            setButtonText={setButtonText}
+            themeSettings={themeSettings}
+          />
+        </div>
+      </div>
+
+      <div className="mt-12">
+        <SettingsModal
+          timerSettings={timerSettings}
+          setTimerSettings={setTimerSettings}
+          themeSettings={themeSettings}
+          setThemeSettings={setThemeSettings}
+        />
+      </div>
+    </div>
   );
 }
 

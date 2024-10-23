@@ -1,73 +1,45 @@
 const ModeHeader = ({ timerSettings, handleModeChange, themeSettings }) => {
   return (
     <>
-      <form
-        className="controls"
-        style={{ fontFamily: `${themeSettings.font}` }}
-      >
-        <input
-          type="radio"
-          id="pomo"
-          name="mode"
-          checked={timerSettings.mode === 'pomo'}
-          //   defaultChecked={timerSettings.mode === 'pomo'}
-          onChange={handleModeChange}
-          className="hidden"
-        />
-        <label
-          htmlFor="pomo"
-          className="cursor-pointer"
-          style={{
-            backgroundColor:
-              timerSettings.mode === 'pomo'
-                ? `${themeSettings.color}`
-                : 'transparent',
-          }}
-        >
-          pomodoro
-        </label>
-
-        <input
-          type="radio"
-          id="short"
-          name="mode"
-          checked={timerSettings.mode === 'short'}
-          onChange={handleModeChange}
-          className="hidden"
-        />
-        <label
-          htmlFor="short"
-          className="cursor-pointer"
-          style={{
-            backgroundColor:
-              timerSettings.mode === 'short'
-                ? `${themeSettings.color}`
-                : 'transparent',
-          }}
-        >
-          short break
-        </label>
-
-        <input
-          type="radio"
-          id="long"
-          name="mode"
-          checked={timerSettings.mode === 'long'}
-          onChange={handleModeChange}
-          className="hidden"
-        />
-        <label
-          htmlFor="long"
-          className="cursor-pointer"
-          style={{
-            backgroundColor:
-              timerSettings.mode === 'long'
-                ? `${themeSettings.color}`
-                : 'transparent',
-          }}
-        >
-          long break
-        </label>
+      <form className="flex items-center justify-center p-2 rounded-full bg-[#161932] w-full max-w-md">
+        <div className="relative flex items-center gap-4 p-2 rounded-full bg-[#161932]">
+          {[
+            { id: 'pomo', label: 'pomodoro' },
+            { id: 'short', label: 'short break' },
+            { id: 'long', label: 'long break' },
+          ].map((mode) => (
+            <div key={mode.id} className="relative">
+              <input
+                type="radio"
+                id={mode.id}
+                name="mode"
+                checked={timerSettings.mode === mode.id}
+                onChange={handleModeChange}
+                className="hidden peer"
+              />
+              <label
+                htmlFor={mode.id}
+                style={{
+                  fontFamily: themeSettings.font,
+                  backgroundColor:
+                    timerSettings.mode === mode.id
+                      ? themeSettings.color
+                      : 'transparent',
+                }}
+                className={`
+                px-6 py-4 rounded-full cursor-pointer text-sm font-bold transition-all duration-300
+                ${
+                  timerSettings.mode === mode.id
+                    ? 'text-[#161932]'
+                    : 'text-gray-400 hover:text-white'
+                }
+              `}
+              >
+                {mode.label}
+              </label>
+            </div>
+          ))}
+        </div>
       </form>
     </>
   );

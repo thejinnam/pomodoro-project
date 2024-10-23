@@ -24,7 +24,7 @@ const TimerDisplay = ({
   return (
     <div className={`max-w-l mx-auto p-10`}>
       <div
-        className="flex flex-col items-center justify-center bg-gray-900 rounded-lg shadow-lg p-8"
+        className="flex flex-col items-center justify-center bg-gray-900 rounded-full shadow-lg p-8"
         style={{ fontFamily: themeSettings.font }}
       >
         <CircularProgressbarWithChildren
