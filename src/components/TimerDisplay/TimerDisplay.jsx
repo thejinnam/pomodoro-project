@@ -22,7 +22,7 @@ const TimerDisplay = ({
   };
 
   return (
-    <div className={`max-w-l mx-auto p-4`}>
+    <div className="max-w-l mx-auto p-4">
       <div
         className="flex flex-col items-center justify-center bg-gray-900 rounded-full shadow-lg p-6"
         style={{ fontFamily: themeSettings.font }}
@@ -36,7 +36,7 @@ const TimerDisplay = ({
             pathColor: themeSettings.color || `#F87070`,
             textColor: '#D7E0FF',
             textSize: '12px',
-            fontFamily: `${themeSettings.font}`,
+            fontFamily: themeSettings.font,
             trailColor: 'rgba(255, 255, 255, 0.2)',
           })}
         >

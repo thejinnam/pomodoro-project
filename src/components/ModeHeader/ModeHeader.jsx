@@ -4,7 +4,7 @@ const ModeHeader = ({ timerSettings, handleModeChange, themeSettings }) => {
   return (
     <>
       <form className="flex items-center justify-center p-2 rounded-full bg-[#161932] w-full max-w-md">
-        <div className="relative flex items-center gap-4 p-2 rounded-full bg-[#161932]">
+        <div className="relative flex items-center gap-2 p-2 rounded-full bg-[#161932]">
           {[
             { id: 'pomo', label: 'pomodoro' },
             { id: 'short', label: 'short break' },

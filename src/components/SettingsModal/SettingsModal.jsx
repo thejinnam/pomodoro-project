@@ -7,6 +7,7 @@ const SettingsModal = ({
   setThemeSettings,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  //using local state to allow users to input/modify settings before applying them to global state
   const [localSettings, setLocalSettings] = useState({
     pomo: timerSettings.lengths.pomo / 60,
     short: timerSettings.lengths.short / 60,

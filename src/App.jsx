@@ -66,7 +66,6 @@ function App() {
         break;
     }
 
-    // Reset the timer's activity state and button text
     setIsActive(false);
     setButtonText('START');
   };
